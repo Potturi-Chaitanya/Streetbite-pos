@@ -132,7 +132,7 @@
 
       // 2. FETCH AND DISPLAY CURRENT MENU
       async function loadMenu() {
-        const res = await fetch("http://127.0.0.1:8000/api/menu/1");
+        const res = await fetch("https://streetbite-pos.onrender.com/api/menu/1");
         const menu = await res.json();
 
         const list = document.getElementById("currentMenu");
@@ -152,7 +152,7 @@
       async function deleteItem(id) {
         if (!confirm("Are you sure you want to delete this item?")) return;
 
-        const res = await fetch(`http://127.0.0.1:8000/api/menu/${id}`, {
+        const res = await fetch(`https://streetbite-pos.onrender.com/api/menu/${id}`, {
           method: "DELETE",
           headers: { "x-api-key": API_KEY }, // Sending the secret password!
         });
@@ -180,7 +180,7 @@
             spicy: document.getElementById("spicy").checked,
           };
 
-          const res = await fetch("http://127.0.0.1:8000/api/menu/", {
+          const res = await fetch("https://streetbite-pos.onrender.com/api/menu/", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
