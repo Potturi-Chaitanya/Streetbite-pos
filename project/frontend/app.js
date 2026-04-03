@@ -49,7 +49,7 @@ async function fetchMenu() {
   try {
     // 1. Try to get live data from Python
     const response = await fetch(
-      `http://127.0.0.1:8000/api/menu/${RESTAURANT_ID}`,
+      `https://streetbite-pos.onrender.com/api/menu/${RESTAURANT_ID}`,
     );
     if (!response.ok) throw new Error("Server offline");
 
